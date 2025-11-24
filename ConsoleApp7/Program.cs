@@ -4,20 +4,20 @@ class Program
 {
     static void Main()
     {
-        Console.Write("Введите класс персонажа: ");
-        string characterClass = Console.ReadLine();
+        int sum = 0;
 
-        if (characterClass == "воин" || characterClass == "паладин" || characterClass == "варвар" || characterClass == "разбойник")
-        {
-            Console.WriteLine("Ближний боец");
-        }
-        else if (characterClass == "маг" || characterClass == "охотник" || characterClass == "жрец" || characterClass == "друид")
-        {
-            Console.WriteLine("Дальнобойщик");
-        }
-        else
-        {
-            Console.WriteLine("Неизвестный класс");
-        }
+        Console.Write("Введите первое число: ");
+        int num1 = int.Parse(Console.ReadLine());
+        if (num1 > 0) sum += num1;
+
+        Console.Write("Введите второе число: ");
+        int num2 = int.Parse(Console.ReadLine());
+        if (num2 > 0) sum += num2;
+
+        Console.Write("Введите третье число: ");
+        int num3 = int.Parse(Console.ReadLine());
+        if (num3 > 0) sum += num3;
+
+        Console.WriteLine($"Сумма положительных чисел: {sum}");
     }
 }
