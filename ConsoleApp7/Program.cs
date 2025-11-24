@@ -1,27 +1,23 @@
-﻿namespace Program
+﻿using System;
+
+class Program
 {
-    internal class Program
+    static void Main()
     {
-        // Статическая переменная для хранения здоровья персонажа
-        static int health = 100;
+        Console.Write("Введите класс персонажа: ");
+        string characterClass = Console.ReadLine();
 
-        static void Main(string[] args)
+        if (characterClass == "воин" || characterClass == "паладин" || characterClass == "варвар" || characterClass == "разбойник")
         {
-            // Вывод начального здоровья персонажа
-            Console.WriteLine($"Здоровье персонажа: {health}");
-
-            // Вызов метода для нанесения урона персонажу
-            TakeDamage(30);
+            Console.WriteLine("Ближний боец");
         }
-
-        // Метод для нанесения урона персонажу
-        static void TakeDamage(int damage)
+        else if (characterClass == "маг" || characterClass == "охотник" || characterClass == "жрец" || characterClass == "друид")
         {
-            // Уменьшение здоровья на величину урона
-            health -= damage;
-
-            // Вывод информации о полученном уроне и текущем здоровье
-            Console.WriteLine($"Персонаж получил {damage} урона. Текущее здоровье: {health}.");
+            Console.WriteLine("Дальнобойщик");
+        }
+        else
+        {
+            Console.WriteLine("Неизвестный класс");
         }
     }
 }
