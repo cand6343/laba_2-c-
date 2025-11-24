@@ -4,44 +4,23 @@ class Program
 {
     static void Main()
     {
-        Console.Write("Введите первое число: ");
-        double num1 = double.Parse(Console.ReadLine());
+        Console.Write("Выберите уровень сложности (1-3): ");
+        int level = int.Parse(Console.ReadLine());
 
-        Console.Write("Введите второе число: ");
-        double num2 = double.Parse(Console.ReadLine());
-
-        Console.Write("Введите операцию (+, -, *, /): ");
-        string operation = Console.ReadLine();
-
-        double result = 0;
-
-        switch (operation)
+        switch (level)
         {
-            case "+":
-                result = num1 + num2;
+            case 1:
+                Console.WriteLine("Легкий");
                 break;
-            case "-":
-                result = num1 - num2;
+            case 2:
+                Console.WriteLine("Средний");
                 break;
-            case "*":
-                result = num1 * num2;
-                break;
-            case "/":
-                if (num2 != 0)
-                {
-                    result = num1 / num2;
-                }
-                else
-                {
-                    Console.WriteLine("Ошибка: деление на ноль!");
-                    return;
-                }
+            case 3:
+                Console.WriteLine("Сложный");
                 break;
             default:
-                Console.WriteLine("Неизвестная операция!");
-                return;
+                Console.WriteLine("Ошибка");
+                break;
         }
-
-        Console.WriteLine($"{num1} {operation} {num2} = {result}");
     }
 }
