@@ -1,26 +1,27 @@
-﻿using System;
-
-class Program
+﻿namespace Program
 {
-    static void Main()
+    internal class Program
     {
-        Console.Write("Выберите уровень сложности (1-3): ");
-        int level = int.Parse(Console.ReadLine());
+        // Статическая переменная для хранения здоровья персонажа
+        static int health = 100;
 
-        switch (level)
+        static void Main(string[] args)
         {
-            case 1:
-                Console.WriteLine("Легкий");
-                break;
-            case 2:
-                Console.WriteLine("Средний");
-                break;
-            case 3:
-                Console.WriteLine("Сложный");
-                break;
-            default:
-                Console.WriteLine("Ошибка");
-                break;
+            // Вывод начального здоровья персонажа
+            Console.WriteLine($"Здоровье персонажа: {health}");
+
+            // Вызов метода для нанесения урона персонажу
+            TakeDamage(30);
+        }
+
+        // Метод для нанесения урона персонажу
+        static void TakeDamage(int damage)
+        {
+            // Уменьшение здоровья на величину урона
+            health -= damage;
+
+            // Вывод информации о полученном уроне и текущем здоровье
+            Console.WriteLine($"Персонаж получил {damage} урона. Текущее здоровье: {health}.");
         }
     }
 }
