@@ -5,18 +5,46 @@ class Program
     static void Main()
     {
         Console.Write("Введите первое число: ");
-        int num1 = int.Parse(Console.ReadLine());
+        double num1 = double.Parse(Console.ReadLine());
 
         Console.Write("Введите второе число: ");
-        int num2 = int.Parse(Console.ReadLine());
+        double num2 = double.Parse(Console.ReadLine());
 
-        if (num1 < num2)
+        Console.Write("Введите операцию (+, -, *, /): ");
+        string operation = Console.ReadLine();
+
+        double result = 0;
+
+        if (operation == "+")
         {
-            Console.WriteLine(num1);
+            result = num1 + num2;
+        }
+        else if (operation == "-")
+        {
+            result = num1 - num2;
+        }
+        else if (operation == "*")
+        {
+            result = num1 * num2;
+        }
+        else if (operation == "/")
+        {
+            if (num2 != 0)
+            {
+                result = num1 / num2;
+            }
+            else
+            {
+                Console.WriteLine("Ошибка: деление на ноль!");
+                return;
+            }
         }
         else
         {
-            Console.WriteLine(num2);
+            Console.WriteLine("Неизвестная операция!");
+            return;
         }
+
+        Console.WriteLine($"{num1} {operation} {num2} = {result}");
     }
 }
