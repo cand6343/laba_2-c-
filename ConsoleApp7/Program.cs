@@ -4,47 +4,35 @@ class Program
 {
     static void Main()
     {
-        Console.Write("Введите первое число: ");
-        double num1 = double.Parse(Console.ReadLine());
+        Console.Write("Введите номер дня недели (1-7): ");
+        int day = int.Parse(Console.ReadLine());
 
-        Console.Write("Введите второе число: ");
-        double num2 = double.Parse(Console.ReadLine());
-
-        Console.Write("Введите операцию (+, -, *, /): ");
-        string operation = Console.ReadLine();
-
-        double result = 0;
-
-        if (operation == "+")
+        switch (day)
         {
-            result = num1 + num2;
+            case 1:
+                Console.WriteLine("Понедельник");
+                break;
+            case 2:
+                Console.WriteLine("Вторник");
+                break;
+            case 3:
+                Console.WriteLine("Среда");
+                break;
+            case 4:
+                Console.WriteLine("Четверг");
+                break;
+            case 5:
+                Console.WriteLine("Пятница");
+                break;
+            case 6:
+                Console.WriteLine("Суббота");
+                break;
+            case 7:
+                Console.WriteLine("Воскресенье");
+                break;
+            default:
+                Console.WriteLine("Ошибка: введите число от 1 до 7");
+                break;
         }
-        else if (operation == "-")
-        {
-            result = num1 - num2;
-        }
-        else if (operation == "*")
-        {
-            result = num1 * num2;
-        }
-        else if (operation == "/")
-        {
-            if (num2 != 0)
-            {
-                result = num1 / num2;
-            }
-            else
-            {
-                Console.WriteLine("Ошибка: деление на ноль!");
-                return;
-            }
-        }
-        else
-        {
-            Console.WriteLine("Неизвестная операция!");
-            return;
-        }
-
-        Console.WriteLine($"{num1} {operation} {num2} = {result}");
     }
 }
