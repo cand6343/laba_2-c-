@@ -4,20 +4,51 @@ class Program
 {
     static void Main()
     {
-        int sum = 0;
+        Console.WriteLine("Вы стоите перед первой дверью. Перед вами два пути:");
+        Console.WriteLine("A - Войти в комнату с огромным драконом");
+        Console.WriteLine("B - Пойти по темному коридору");
+        Console.Write("Выберите путь (A/B): ");
+        string choice = Console.ReadLine().ToUpper();
 
-        Console.Write("Введите первое число: ");
-        int num1 = int.Parse(Console.ReadLine());
-        if (num1 > 0) sum += num1;
+        if (choice == "A")
+        {
+            Console.WriteLine("Дракон говорит: \"Кто не дышит, но живет; хоть не нужно — много пьет; и в жизни, и в смерти тело как лед.\"");
+            Console.Write("Ваш ответ: ");
+            string answer = Console.ReadLine().ToLower();
 
-        Console.Write("Введите второе число: ");
-        int num2 = int.Parse(Console.ReadLine());
-        if (num2 > 0) sum += num2;
+            if (answer == "рыба")
+            {
+                Console.WriteLine("Правильно! Дракон открывает дверь в следующую комнату.");
+            }
+            else
+            {
+                Console.WriteLine("Неправильно! Дракон съедает вас!");
+            }
+        }
+        else if (choice == "B")
+        {
+            Console.WriteLine("Вы в темной комнате с двумя дверями:");
+            Console.WriteLine("1 - Дверь с сокровищами Dungeon Master’а");
+            Console.WriteLine("2 - Дверь с ловушкой с ядовитыми шипами");
+            Console.Write("Выберите дверь (1/2): ");
+            string door = Console.ReadLine();
 
-        Console.Write("Введите третье число: ");
-        int num3 = int.Parse(Console.ReadLine());
-        if (num3 > 0) sum += num3;
-
-        Console.WriteLine($"Сумма положительных чисел: {sum}");
+            if (door == "1")
+            {
+                Console.WriteLine("Поздравляем! Вы нашли сокровища Dungeon Master’а!");
+            }
+            else if (door == "2")
+            {
+                Console.WriteLine("Вы попали в ловушку с ядовитыми шипами!");
+            }
+            else
+            {
+                Console.WriteLine("Неверный выбор!");
+            }
+        }
+        else
+        {
+            Console.WriteLine("Неверный выбор!");
+        }
     }
 }
