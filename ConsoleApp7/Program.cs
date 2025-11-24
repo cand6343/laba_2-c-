@@ -4,16 +4,19 @@ class Program
 {
     static void Main()
     {
-        Console.Write("Введите число: ");
-        int number = int.Parse(Console.ReadLine());
+        Console.Write("Введите пароль: ");
+        string password = Console.ReadLine();
 
-        if (number % 2 == 0)
+        Console.Write("Подтвердите пароль: ");
+        string confirmPassword = Console.ReadLine();
+
+        if (password == confirmPassword)
         {
-            Console.WriteLine($"число {number} чётное");
+            Console.WriteLine("Пароль принят");
         }
         else
         {
-            Console.WriteLine($"число {number} нечётное");
+            Console.WriteLine("Пароль не принят");
         }
     }
 }
